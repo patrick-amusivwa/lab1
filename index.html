@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <title>amusivwa patrick</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            padding-top: 20px;
+            transition: background 0.3s, color 0.3s;
+            /* make it  100vh; */
+            min-height: 100vh;
+            min-width: 90vw;
+    
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        #hero-img {
+            border-radius: 50%;
+            width: 200px;
+            margin: auto;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo img {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        .visit-count {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons {
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .preferences-section,
+        .data-section {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode .preferences-section,
+        .dark-mode .data-section {
+            background: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            transition: color 0.3s;
+        }
+
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3 {
+            color: #ddd;
+        }
+
+        .centered-icon {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+        .code-container {
+    background-color: #1E1E1E; /* Dark background similar to VSCode */
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    overflow: auto; /* For scrolling if content overflows */
+}
+
+.code-style {
+    display: block;
+    font-family: 'Courier New', monospace; /* Monospace font for code-like appearance */
+    color: #D4D4D4; /* Light grayish text color for better visibility on dark background */
+    margin-bottom: 10px;
+    word-wrap: break-word; /* To wrap long content */
+}
+
+/* Optional: You can also add colors for certain special keys or values if you'd like */
+.key-style {
+    color: #C586C0; /* Light purple color for key names */
+}
+
+.value-style {
+    color: #9CDCFE; /* Light blue color for values */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="container mt-5">
+            <!-- Visitor Count and Logo Icon -->
+            <div class="visit-count">
+                Visitor Count: <span id="visitorCount">0</span>
+            </div>
+            <div class="nav-logo">
+                <img src="assets\img\logo.jpg" alt="Logo">
+            </div>
+        <div class="row">
+
+            <!-- Left side: Image and Social Links -->
+            <div class="col-md-6">
+                <img id="hero-img" src="assets/img/profilePhoto.jpeg" class="mb-3">
+                <div class="social-icons">
+                    <a href="mailto:amusivwa@outlook.com" class="text-muted"><i class="fas fa-envelope"></i></a>
+                    <a href="https://instagram.com/" class="text-muted"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://hackerrank.com/" class="text-muted"><i
+                            class="fab fa-hackerrank"></i></a>
+                    <a href="https://github.com/amusivwa" class="text-muted"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/amusivwa" class="text-muted"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <h1>Hi, I'm Patrick-Amusivwa SCT221-0209/2021</h1>
+                <p>In this project, we embarked on an in-depth exploration of the Local Storage API, an essential component of modern web
+                development. This journey encompassed core web technologies such as HTML, Cascading Style Sheets (CSS), and JavaScript.
+                
+                Our objective was to showcase the dynamic and data-driven nature of websites, emphasizing the need for client-side data
+                storage. Traditionally, solutions like HTTP cookies served this purpose, but they come with limitations. With the advent
+                of HTML5, we now have the Local Storage standard, which offers a robust solution.
+                
+                Our application effectively harnesses the Web Storage API, providing two primary mechanisms:
+                <br>
+                sessionStorage - This allows data storage during a page session, which gets cleared once the session concludes.
+                localStorage - This mechanism persists data across multiple sessions, even when the browser is restarted.
+                Through this initiative, we demonstrated practical use cases, such as saving user preferences and tracking visit counts.
+                It showcased how easy and efficient it is to store both simple data types and complex objects like JSON.
+                
+                To ensure a comprehensive understanding, we also implemented functionalities to manipulate stored data - from updating
+                and retrieving to removing specific data or even clearing everything.
+                
+              </p>
+            </div>
+
+            <!-- Right side: Forms and User Preferences -->
+            <div class="col-md-6">
+
+                <div class="data-section code-container">
+                    ...
+                    <ul id="storedDataList"></ul>
+                </div>
+
+
+            <!-- User Preferences -->
+          
+<div class="preferences-section mb-5">
+    <h2>User Preferences</h2>
+    <p>Select a theme:</p>
+    <label>
+        <input type="radio" name="theme" value="light" checked> Light
+    </label>
+    <label>
+        <input type="radio" name="theme" value="dark"> Dark
+    </label>
+    <button id="savePreferences" class="btn btn-primary mt-3">Save Preferences</button>
+</div>
+    
+<!-- Data Manipulation -->
+<div class="data-section">
+    <h2>Data Manipulation</h2>
+    <input type="text" class="form-control mb-2" id="dataKey" placeholder="Key">
+    <input type="text" class="form-control mb-2" id="dataValue" placeholder="Value">
+    <button id="addData" class="btn btn-success mb-2">Add Data</button>
+    <button id="clearData" class="btn btn-danger mb-2">Clear All Data</button>
+
+    <!-- Code-styled Data Display -->
+    <div class="code-container mt-3">
+        <ul id="storedDataList"></ul>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('savePreferences').addEventListener('click', function () {
+            let selectedTheme = document.querySelector('input[name="theme"]:checked').value;
+
+            if (selectedTheme === "dark") {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+    <script src="visitCounter.js"></script>
+    <script src="localStorageHandler.js"></script>
+</body>
+
+</html>
